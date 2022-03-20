@@ -20,6 +20,7 @@ dependencies {
     implementation project(':global')
     implementation 'com.github.xtomyserrax:StaffFacilities:5.0.6.0'
     implementation 'org.bstats:bstats-bukkit:3.0.0'
+    implementation 'com.github.puregero:multilib:1.1.1'
     compileOnly 'com.comphenix.protocol:ProtocolLib:4.8.0'
     compileOnly 'com.mojang:authlib:3.3.39'
     compileOnly 'io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT'
@@ -37,6 +38,7 @@ tasks.shadowJar {
 	archiveFileName = 'TabList-bukkit-' + version + '.jar'
 
 	relocate 'org.bstats', 'hu.montlikadani.tablist.bstats'
+    relocate 'com.github.puregero.multilib', 'hu.montlikadani.tablist.multilib'
 
 	exclude 'META-INF/**'
 

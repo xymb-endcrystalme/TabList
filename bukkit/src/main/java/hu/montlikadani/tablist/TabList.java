@@ -310,6 +310,9 @@ public final class TabList extends org.bukkit.plugin.java.JavaPlugin {
 	}
 
 	void updateAll(Player player, boolean reload) {
+		if (!com.github.puregero.multilib.MultiLib.isLocalPlayer(player))
+			return;
+
 		TabListUser user = getUser(player.getUniqueId()).orElseGet(() -> {
 			TabListUser tlu = new TabListPlayer(this, player.getUniqueId());
 			users.add(tlu);
